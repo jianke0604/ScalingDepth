@@ -438,6 +438,8 @@ SD.papers = [
   { title: "The Birkhoff Geometry of Manifold-Constrained Hyper-Connections", authors: "Li, Sha et al.", year: 2026, arxiv: "2610.06653", topic: "theory" },
   { title: "Accelerating Birkhoff Projection for Manifold-Constrained Hyper-Connections", authors: "Wang, Qiu et al.", year: 2026, arxiv: "2606.07574", topic: "systems" },
   { title: "An Analysis of Residual-Stream Geometry Across Transformer Depth", authors: "Bhattacharya, Kolli et al.", year: 2026, arxiv: "2607.18348", topic: "analysis" },
+  { title: "Inverse Depth Scaling From Most Layers Being Similar", authors: "Liu, Kangaslahti, Liu, Gore", year: 2026, arxiv: "2602.05970", topic: "analysis",
+    note: "LLM loss falls roughly as 1/depth; similar layers reduce error by ensemble averaging rather than compositional computation." },
   { title: "Do Language Models Use Their Depth Efficiently?", authors: "Csordás, Manning, Potts", year: 2025, arxiv: "2505.13898", topic: "analysis" },
   { title: "The Curse of Depth in Large Language Models", authors: "Sun et al.", year: 2025, arxiv: "2502.05795", topic: "analysis" },
   { title: "Transformer Layers as Painters", authors: "Sun et al.", year: 2024, arxiv: "2407.09298", topic: "analysis" },
