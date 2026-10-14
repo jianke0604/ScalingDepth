@@ -430,7 +430,7 @@ SD.methods = [
 /* ---------- Reading list: analysis, theory & benchmarks ---------- */
 SD.papers = [
   { title: "DepthBench: Measuring How Residual Connections Enable More Computational Depth",
-    authors: "Wang, Huang, Kang, González-Martínez, Liu, Liu", year: 2026, arxiv: "2609.32534",
+    authors: "Wang et al.", year: 2026, arxiv: "2609.32534",
     topic: "benchmark", note: "Controlled width–depth sweeps across 10 architectures; residual design decides whether depth becomes computation." },
   { title: "The Residual Stream's Effective Depth", authors: "Gahtan, Galil et al.", year: 2026, arxiv: "2609.31098", topic: "analysis" },
   { title: "How Does mHC Use Its Residual Streams? Selective Routing and Near-Identity Mixing", authors: "Zhao, Li et al.", year: 2026, arxiv: "2609.05309", topic: "analysis" },
