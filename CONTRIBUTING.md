@@ -30,6 +30,13 @@ Thanks for helping map the residual design space! 🎉
 Append to `SD.papers` with `title`, `authors`, `year`, `arxiv`, and `topic`
 (`analysis` | `theory` | `benchmark` | `systems`).
 
+## Add a tutorial or blog post
+
+- **Tutorial**: append to `SD.tutorials` with `group` (section heading, e.g. `"Learning Resources"`),
+  `type` (`Video` | `Article` | `Course` | `Notebook`), `title`, `source`, `link`, and optionally
+  `linkLabel`, `desc`, and `extra` (a list of `{ label, url }` for slides, code, etc.).
+- **Blog post**: append to `SD.blogs` with `title`, `authors`, `date` (`"YYYY-MM"`), `link`, and optionally `note` and `tag`.
+
 ## Guidelines
 
 - Use the shared notation: `x_l` = residual stream entering layer *l*, `F_l` = attention or MLP branch, `H_l` = multi-stream state.

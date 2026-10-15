@@ -256,3 +256,13 @@ select { padding: 11px 12px; border-radius: 10px; border: 1px solid var(--line);
 
 .copy-wrap { position: relative; }
 .copy-btn { position: absolute; top: 10px; right: 10px; font: 600 .78rem var(--sans); padding: 6px 10px; border-radius: 7px; border: 1px solid var(--line); background: var(--surface); color: var(--text); cursor: pointer; }
+
+/* ---------- Tutorials ---------- */
+.tut-group + .tut-group { margin-top: 40px; }
+.tut-group h2 { margin-bottom: 18px; }
+.tutorial { display: flex; flex-direction: column; }
+.tutorial .tags { margin-bottom: 10px; }
+.tutorial h3 { font-size: 1.12rem; margin: 0; }
+.tutorial .meta { font-size: .84rem; color: var(--muted); margin: 4px 0 12px; }
+.tutorial p { flex: 1; }
+.tutorial .links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 14px; font-size: .88rem; font-weight: 500; }

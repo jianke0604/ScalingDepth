@@ -449,6 +449,27 @@ SD.papers = [
   { title: "Batch Normalization Biases Residual Blocks Towards the Identity Function in Deep Networks", authors: "De, Smith", year: 2020, arxiv: "2002.10444", topic: "theory" }
 ];
 
+/* ---------- Tutorials: lectures, courses & long-form guides ---------- */
+// `group` is the section heading on the Tutorials page; entries with the same group are listed together.
+SD.tutorials = [
+  { group: "Learning Resources", type: "Video",
+    title: "Stanford CS336 · Lecture 3: Architectures, Hyperparameters",
+    source: "Tatsunori Hashimoto · Stanford CS336 Language Modeling from Scratch, Spring 2025",
+    link: "https://www.youtube.com/watch?v=ptFiH_bHnJw", linkLabel: "Watch lecture",
+    extra: [{ label: "Slides", url: "https://github.com/stanford-cs336/spring2025-lectures/blob/e9cb2488fdb53ea37f0e38924ec3a1701925cef3/nonexecutable/2025%20Lecture%203%20-%20architecture.pdf" },
+            { label: "Course", url: "https://cs336.stanford.edu/spring2025/" }],
+    desc: "What modern LLMs converged on: pre- vs post-norm, RMSNorm, dropping bias terms, gated activations, and hyperparameters such as the FFN ratio and the width–depth aspect ratio." },
+  { group: "Learning Resources", type: "Article",
+    title: "The Big LLM Architecture Comparison",
+    source: "Sebastian Raschka · Ahead of AI",
+    link: "https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison", linkLabel: "Read article",
+    desc: "A side-by-side tour of recent open-weight LLM architectures, including where each one places its normalization layers and how deep and wide it is." }
+];
+
+/* ---------- Blogs: posts & notes on depth and residual streams ---------- */
+// { title, authors, date: "YYYY-MM", link, note?, tag? }
+SD.blogs = [];
+
 /* ---------- News ---------- */
 SD.news = [
   { date: "2026-10", tag: "Community", title: "ScalingDepth launches",

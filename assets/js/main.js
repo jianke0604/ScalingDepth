@@ -27,6 +27,8 @@
     ["methods", "Residuals", `${ROOT}/pages/methods.html`],
     ["benchmarks", "Benchmarks", `${ROOT}/pages/benchmarks.html`],
     ["papers", "Papers", `${ROOT}/pages/papers.html`],
+    ["tutorials", "Tutorials", `${ROOT}/pages/tutorials.html`],
+    ["blogs", "Blogs", `${ROOT}/pages/blogs.html`],
     ["community", "Community", `${ROOT}/pages/community.html`]
   ];
   const header = document.createElement("header");
@@ -59,6 +61,8 @@
         <a href="${ROOT}/pages/methods.html">Residuals</a>
         <a href="${ROOT}/pages/benchmarks.html">Benchmarks</a>
         <a href="${ROOT}/pages/papers.html">Papers</a>
+        <a href="${ROOT}/pages/tutorials.html">Tutorials</a>
+        <a href="${ROOT}/pages/blogs.html">Blogs</a>
         <a href="${L.repo}" target="_blank" rel="noopener">GitHub</a>
         <div style="margin-top:8px">© 2026 ScalingDepth contributors · MIT License</div>
       </div>
@@ -116,6 +120,30 @@
           <p>${esc(p.authors)}${p.note ? ` — ${esc(p.note)}` : ""}</p>
         </div>
         <div><span class="pill">${esc(p.topic)}</span></div>
+      </div>`;
+  }
+
+  function tutorialCard(t) {
+    const links = [{ label: t.linkLabel || "Open", url: t.link }, ...(t.extra || [])];
+    return `
+      <article class="card tutorial">
+        <div class="tags"><span class="pill db">${esc(t.type)}</span></div>
+        <h3><a href="${t.link}" target="_blank" rel="noopener">${esc(t.title)}</a></h3>
+        <div class="meta">${esc(t.source)}</div>
+        ${t.desc ? `<p>${esc(t.desc)}</p>` : ""}
+        <div class="links">${links.map((l) => `<a href="${l.url}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join("")}</div>
+      </article>`;
+  }
+
+  function blogRow(b) {
+    return `
+      <div class="paper">
+        <div class="yr">${esc(b.date)}</div>
+        <div>
+          <h3><a href="${b.link}" target="_blank" rel="noopener">${esc(b.title)}</a></h3>
+          <p>${esc(b.authors)}${b.note ? ` — ${esc(b.note)}` : ""}</p>
+        </div>
+        <div>${b.tag ? `<span class="pill">${esc(b.tag)}</span>` : ""}</div>
       </div>`;
   }
 
@@ -209,6 +237,21 @@
       }
       chips.onclick = (e) => { const c = e.target.closest(".chip"); if (c) { cur = c.dataset.t; draw(); } };
       draw();
+    },
+
+    tutorials() {
+      const groups = [...new Set(SD.tutorials.map((t) => t.group))];
+      $("#tutorial-groups").innerHTML = groups.map((g) => `
+        <div class="tut-group">
+          <h2>${esc(g)}</h2>
+          <div class="grid g2">${SD.tutorials.filter((t) => t.group === g).map(tutorialCard).join("")}</div>
+        </div>`).join("");
+    },
+
+    blogs() {
+      $("#blog-list").innerHTML = SD.blogs.length
+        ? [...SD.blogs].sort((a, b) => b.date.localeCompare(a.date)).map(blogRow).join("")
+        : `<div class="empty">No posts yet. Written something on depth or residual streams? <a href="community.html#contribute">Add it →</a></div>`;
     },
 
     community() { wireCopy(); }
