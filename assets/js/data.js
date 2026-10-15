@@ -383,6 +383,15 @@ SD.methods = [
     desc: "Dual Attention Residuals: a two-path extension of depth-wise attention residuals. (Schematic form.)",
     tags: ["attention over depth", "AttnRes family"]
   },
+  {
+    id: "ldm", name: "Linear Depth Memory (LDM)", family: "aggregation", year: 2026,
+    authors: "González-Martínez, Nazari et al.", venue: "arXiv 2026",
+    arxiv: "2610.18809",
+    code: "https://github.com/davidgonmar/depth-memory",
+    formula: "\\begin{aligned} x_{l+1} &= x_l + v_l,\\quad v_l = F_l\\big(x_l + M_l q_l\\big)\\\\ \\kappa_l &= \\frac{P_l k_l}{\\lambda_l + k_l^{\\top} P_l k_l},\\quad u_l = v_l - M_l k_l\\\\ M_{l+1} &= M_l + u_l \\kappa_l^{\\top},\\quad P_{l+1} = \\big(P_l - \\kappa_l k_l^{\\top} P_l\\big)/\\lambda_l \\end{aligned}",
+    desc: "Treats depth mixing as storage and retrieval: next to the residual stream, every layer writes into a fixed-size linear associative memory and reads from it, kept at the exact ridge-regression solution over depth by recursive least squares. (Schematic form.)",
+    tags: ["memory over depth", "RLS", "fixed-size state"]
+  },
 
   // ---------------- Multi-Stream / Hyper-Connections ----------------
   {
@@ -468,7 +477,12 @@ SD.tutorials = [
 
 /* ---------- Blogs: posts & notes on depth and residual streams ---------- */
 // { title, authors, date: "YYYY-MM", link, note?, tag? }
-SD.blogs = [];
+SD.blogs = [
+  { title: "Depth Memory", authors: "Philipp Nazari", date: "2026-10",
+    link: "https://phnazari.github.io/blog/2026/depth-memory/",
+    note: "A walkthrough of Linear Depth Memory: depth mixing as storage and retrieval, the RLS memory, results and the efficient implementation.",
+    tag: "LDM" }
+];
 
 /* ---------- News ---------- */
 SD.news = [
