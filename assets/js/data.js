@@ -388,8 +388,8 @@ SD.methods = [
     authors: "González-Martínez, Nazari et al.", venue: "arXiv 2026",
     arxiv: "2610.18809",
     code: "https://github.com/davidgonmar/depth-memory",
-    formula: "\\begin{aligned} x_{l+1} &= x_l + v_l,\\quad v_l = F_l\\big(x_l + M_l q_l\\big)\\\\ M_{l+1} &= M_l + \\big(v_l - M_l k_l\\big)\\,\\kappa_l^{\\top}\\ \\ (\\kappa_l:\\ \\text{RLS gain}) \\end{aligned}",
-    desc: "Treats depth mixing as storage and retrieval: next to the residual stream, every layer writes into a fixed-size linear associative memory and reads from it, kept at the exact ridge-regression solution over depth by recursive least squares. (Schematic form.)",
+    formula: "\\begin{aligned} &x_{l+1} = x_l + v_l,\\quad v_l = F_l\\big(x_l + M_l q_l\\big)\\\\ &(M_{l+1}, P_{l+1}) = \\mathrm{RLS}\\big(M_l, P_l;\\ k_l, v_l\\big) \\end{aligned}",
+    desc: "The memory represents the solution of an online linear regression objective. (Schematic form.)",
     tags: ["memory over depth", "RLS", "fixed-size state"]
   },
 
