@@ -389,7 +389,7 @@ SD.methods = [
     arxiv: "2610.18809",
     code: "https://github.com/davidgonmar/depth-memory",
     formula: "\\begin{aligned} &x_{l+1} = x_l + v_l,\\quad v_l = F_l\\big(x_l + M_l q_l\\big)\\\\ &(M_{l+1}, P_{l+1}) = \\mathrm{RLS}\\big(M_l, P_l;\\ k_l, v_l\\big) \\end{aligned}",
-    desc: "The memory represents the solution of an online linear regression objective. (Schematic form.)",
+    desc: "Each layer reads from and writes to a fixed-size linear memory over depth. The memory represents the solution of an online linear regression objective. (Schematic form.)",
     tags: ["memory over depth", "RLS", "fixed-size state"]
   },
 
